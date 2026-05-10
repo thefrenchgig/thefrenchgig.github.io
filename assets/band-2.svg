@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Band photo 2 placeholder">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#23131a"/>
+      <stop offset="100%" stop-color="#0e0810"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg2)"/>
+  <g stroke="#ef4135" stroke-width="3" fill="none" opacity="0.55">
+    <rect x="280" y="180" width="240" height="120" rx="12"/>
+    <line x1="320" y1="200" x2="320" y2="280"/>
+    <line x1="360" y1="200" x2="360" y2="280"/>
+    <line x1="400" y1="200" x2="400" y2="280"/>
+    <line x1="440" y1="200" x2="440" y2="280"/>
+    <line x1="480" y1="200" x2="480" y2="280"/>
+    <path d="M 260 240 L 200 480 M 540 240 L 600 480" stroke-width="4"/>
+  </g>
+  <text x="400" y="80" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#f5f0e6" font-style="italic">Band photo 2</text>
+  <text x="400" y="560" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#888">replace with assets/band-2.jpg</text>
+</svg>

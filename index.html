@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The French Gig — Live music with French flair</title>
+  <meta name="description" content="The French Gig — live band available for booking. Photos, videos, and contact." />
+  <meta property="og:title" content="The French Gig" />
+  <meta property="og:description" content="Live music with French flair. Watch our videos, see photos, and book us." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-row">
+      <a href="#top" class="brand" aria-label="The French Gig — home">
+        <img src="assets/logo.svg" alt="" class="brand-logo" />
+        <span class="brand-text">The French Gig</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#photos">Photos</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" role="presentation"></div>
+      <div class="hero-overlay" role="presentation"></div>
+      <div class="container hero-content">
+        <img src="assets/logo.svg" alt="The French Gig logo" class="hero-logo" />
+        <h1 id="hero-title">The French Gig</h1>
+        <p class="hero-tagline"><em>Live music, French flair.</em></p>
+        <div class="hero-ctas">
+          <a class="btn btn-ghost" href="https://www.youtube.com/@TheFrenchGig" target="_blank" rel="noopener">
+            Watch on YouTube
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="btn btn-primary" href="#contact">Book us</a>
+        </div>
+      </div>
+      <a href="#about" class="hero-scroll" aria-label="Scroll to About">▼</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">À propos</p>
+          <h2 id="about-title">About the band</h2>
+          <p>
+            The French Gig is a live act blending the energy of contemporary music with
+            the romance of French songwriting. From intimate cafés to festival stages,
+            we bring crowds to their feet.
+          </p>
+          <p>
+            Available for weddings, corporate events, festivals, restaurants, and private
+            parties. Our setlist moves easily between bilingual originals, classic French
+            chanson, and reimagined favourites.
+          </p>
+          <p class="about-meta">
+            <span>Based in Düsseldorf</span>
+            <span aria-hidden="true">•</span>
+            <span>EN / FR / DE</span>
+          </p>
+        </div>
+        <figure class="about-photo">
+          <img src="assets/band-1.svg" alt="The French Gig performing live" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- PHOTOS -->
+    <section id="photos" class="section section-photos" aria-labelledby="photos-title">
+      <div class="container">
+        <p class="eyebrow">Galerie</p>
+        <h2 id="photos-title">Photos</h2>
+        <p class="section-lede">A glimpse from recent gigs and sessions.</p>
+        <ul class="gallery" role="list">
+          <li><button class="gallery-item" data-index="0" aria-label="Open band photo 1"><img src="assets/band-1.svg" alt="Band performing — photo 1" loading="lazy" /></button></li>
+          <li><button class="gallery-item" data-index="1" aria-label="Open band photo 2"><img src="assets/band-2.svg" alt="Band performing — photo 2" loading="lazy" /></button></li>
+          <li><button class="gallery-item" data-index="2" aria-label="Open band photo 3"><img src="assets/band-3.svg" alt="Band performing — photo 3" loading="lazy" /></button></li>
+          <li><button class="gallery-item" data-index="3" aria-label="Open band photo 4"><img src="assets/band-4.svg" alt="Band performing — photo 4" loading="lazy" /></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="section section-videos" aria-labelledby="videos-title">
+      <div class="container">
+        <p class="eyebrow">En direct</p>
+        <h2 id="videos-title">Watch us</h2>
+        <p class="section-lede">Latest performances, live recordings, and music videos.</p>
+
+        <div class="videos-cta">
+          <a class="btn btn-primary btn-lg" href="https://www.youtube.com/@TheFrenchGig" target="_blank" rel="noopener">
+            Visit our YouTube channel
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="video-grid">
+          <figure class="video-embed">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/dznloqn43pU"
+                title="The French Gig - La Traversée"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+            <figcaption>The French Gig - La Traversée</figcaption>
+          </figure>
+
+          <figure class="video-embed">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/N-Pq1z7yrFg"
+                title="The French Gig - Lava Lamp"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+            <figcaption>The French Gig - Lava Lamp</figcaption>
+          </figure>
+
+          <figure class="video-embed">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/2IYvvxTJmCw"
+                title="The French Gig - Stronger than me by Amy Winehouse (Cover)"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+            </div>
+            <figcaption>The French Gig - Stronger than me by Amy Winehouse (Cover)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Book the band</h2>
+        <p class="section-lede">For bookings, press, or just to say bonjour.</p>
+
+        <div class="contact-card">
+          <a class="contact-email" href="mailto:thefrenchgig@gmail.com?subject=Booking%20inquiry%20%E2%80%94%20The%20French%20Gig">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">thefrenchgig@gmail.com</span>
+          </a>
+
+          <ul class="socials" role="list" aria-label="Find us online">
+            <li>
+              <a href="https://www.youtube.com/@TheFrenchGig" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2 .6 9.4.6 9.4.6s7.4 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+                <span>YouTube</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/thefrenchgig/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.4.4.6.2 1 .5 1.5 1 .5.5.8 1 1 1.5.2.5.3 1.2.4 2.4.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.4-.2.6-.5 1-1 1.5-.5.5-1 .8-1.5 1-.5.2-1.2.3-2.4.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.4-.4a4 4 0 0 1-1.5-1 4 4 0 0 1-1-1.5c-.2-.5-.3-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.4.2-.6.5-1 1-1.5.5-.5 1-.8 1.5-1 .5-.2 1.2-.3 2.4-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1 0-1.6.2-2 .3-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.1.4-.3 1-.3 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 1 .2 1.6.3 2 .2.5.4.8.8 1.2.4.4.7.6 1.2.8.4.1 1 .3 2 .3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1 0 1.6-.2 2-.3.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.1-.4.3-1 .3-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-1-.2-1.6-.3-2-.2-.5-.4-.8-.8-1.2a3 3 0 0 0-1.2-.8c-.4-.1-1-.3-2-.3C15.5 4 15.1 4 12 4Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5.1-2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://open.spotify.com/intl-fr/artist/1DnK6rt5w31bdEmF33rHHW?si=JYOAkdxLT5C9sehRVR5dpA" target="_blank" rel="noopener" aria-label="Spotify">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.6.6 0 0 1-.9.2c-2.4-1.5-5.5-1.8-9.2-1a.6.6 0 1 1-.3-1.2c4-.9 7.4-.5 10.1 1.1.3.2.4.6.3.9Zm1.2-2.7a.8.8 0 0 1-1 .3c-2.8-1.7-7-2.2-10.3-1.2a.8.8 0 1 1-.5-1.5c3.8-1.1 8.4-.6 11.6 1.4.3.2.4.7.2 1Zm.1-2.8c-3.3-2-8.8-2.2-12-1.2a.9.9 0 1 1-.5-1.7c3.6-1.1 9.7-.9 13.5 1.4a.9.9 0 1 1-1 1.5Z"/></svg>
+                <span>Spotify</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© <span id="year">2026</span> The French Gig</p>
+      <p class="footer-note">made with <span aria-hidden="true">♪</span></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous photo">‹</button>
+    <img class="lightbox-img" alt="" />
+    <button class="lightbox-next" aria-label="Next photo">›</button>
+  </div>
+
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
