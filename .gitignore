@@ -1,6 +1,9 @@
 # Local dev helper — not needed in production / public repo
 .claude/
 
+# GitHub Desktop clone artifact (empty folder, not part of the site)
+thefrenchgig.github.io/
+
 # OS noise
 .DS_Store
 Thumbs.db
