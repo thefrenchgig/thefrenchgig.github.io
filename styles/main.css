@@ -210,6 +210,72 @@ button { font: inherit; cursor: pointer; }
 }
 .about-photo img { aspect-ratio: 4/3; object-fit: cover; width: 100%; }
 
+/* Events */
+.events-list { display: flex; flex-direction: column; gap: 16px; }
+
+.event-card {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.event-card:hover, .event-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--accent-2);
+  color: var(--ink);
+}
+.event-date-block {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--bg-soft); border-radius: var(--radius-sm);
+  padding: 12px 8px; text-align: center; flex-shrink: 0;
+}
+.event-day {
+  font-family: var(--font-display); font-size: 40px; line-height: 1;
+  color: var(--accent);
+}
+.event-month {
+  font-size: 13px; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--ink); margin-top: 2px;
+}
+.event-year {
+  font-size: 11px; color: var(--ink-mute); margin-top: 1px;
+}
+.event-venue {
+  font-size: 12px; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--ink-mute); margin: 0 0 6px;
+}
+.event-title {
+  font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px);
+  font-weight: 400; letter-spacing: 2px; margin: 0 0 6px; line-height: 1;
+}
+.event-subtitle {
+  font-size: 14px; color: var(--accent); font-weight: 600;
+  letter-spacing: .04em; margin: 0 0 10px;
+}
+.event-desc {
+  font-size: 15px; color: var(--ink-dim); margin: 0; line-height: 1.5;
+}
+.event-arrow {
+  font-size: 24px; color: var(--ink-mute); flex-shrink: 0;
+  transition: transform .2s ease, color .2s ease;
+}
+.event-card:hover .event-arrow { transform: translateX(4px); color: var(--accent); }
+
+@media (max-width: 600px) {
+  .event-card { grid-template-columns: 64px 1fr; }
+  .event-arrow { display: none; }
+  .event-day { font-size: 30px; }
+}
+
 /* Photos */
 .gallery {
   list-style: none; padding: 0; margin: 0;
