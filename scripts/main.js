@@ -6,6 +6,85 @@
   const yearEl = $('#year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // --- Next Events ----------------------------------------------------------
+  // Loads events.json (managed via /admin/) and renders upcoming .event-card
+  // markup. Past events (date < today) are filtered out automatically. If
+  // nothing is upcoming, shows the #events-empty message instead.
+  const renderEvents = async () => {
+    const list = $('#events-list');
+    const empty = $('#events-empty');
+    if (!list) return;
+    try {
+      const res = await fetch('/events.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const events = await res.json();
+
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const upcoming = events
+        .filter((ev) => ev.date >= todayStr)
+        .sort((a, b) => a.date.localeCompare(b.date));
+
+      if (upcoming.length === 0) {
+        if (empty) empty.hidden = false;
+        return;
+      }
+
+      upcoming.forEach((ev) => {
+        const d = new Date(`${ev.date}T00:00:00`);
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = d.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+        const year = d.getFullYear();
+
+        const a = document.createElement('a');
+        a.className = 'event-card';
+        a.href = ev.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.setAttribute('aria-label', `${ev.title} – The French Gig, ${day} ${month} ${year} at ${ev.venue} — click for details`);
+
+        const dateBlock = document.createElement('div');
+        dateBlock.className = 'event-date-block';
+        const spanDay = document.createElement('span');
+        spanDay.className = 'event-day';
+        spanDay.textContent = day;
+        const spanMonth = document.createElement('span');
+        spanMonth.className = 'event-month';
+        spanMonth.textContent = month;
+        const spanYear = document.createElement('span');
+        spanYear.className = 'event-year';
+        spanYear.textContent = String(year);
+        dateBlock.append(spanDay, spanMonth, spanYear);
+
+        const info = document.createElement('div');
+        info.className = 'event-info';
+        const venue = document.createElement('p');
+        venue.className = 'event-venue';
+        venue.textContent = ev.venue;
+        const title = document.createElement('h3');
+        title.className = 'event-title';
+        title.textContent = ev.title;
+        const subtitle = document.createElement('p');
+        subtitle.className = 'event-subtitle';
+        subtitle.textContent = ev.time ? `${ev.subtitle} · ${ev.time}` : ev.subtitle;
+        const desc = document.createElement('p');
+        desc.className = 'event-desc';
+        desc.textContent = ev.description;
+        info.append(venue, title, subtitle, desc);
+
+        const arrow = document.createElement('span');
+        arrow.className = 'event-arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = '→';
+
+        a.append(dateBlock, info, arrow);
+        list.appendChild(a);
+      });
+    } catch (err) {
+      console.warn('[events] failed to load events.json:', err);
+    }
+  };
+  renderEvents();
+
   // --- Live YouTube videos -------------------------------------------------
   // Fetch the latest 3 uploads from the channel's RSS feed and swap the
   // hardcoded iframes. If the fetch fails (proxy down, offline, etc.), the
