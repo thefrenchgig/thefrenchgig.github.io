@@ -3,7 +3,7 @@
 
   // Paste the Cloudflare Worker URL here after deploying it — see
   // cloudflare-worker/README.md for setup instructions.
-  const WORKER_URL = '';
+  const WORKER_URL = 'https://tfg-admin.thefrenchgig.workers.dev';
 
   const PW_KEY = 'tfg_admin_pw';
 
