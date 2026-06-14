@@ -45,13 +45,41 @@
 
   if (getPassword()) showDashboard();
 
-  loginForm.addEventListener('submit', (e) => {
+  loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const pw = loginPasswordInput.value.trim();
     if (!pw) return;
-    setPassword(pw);
     loginError.hidden = true;
-    showDashboard();
+
+    if (!WORKER_URL) {
+      setPassword(pw);
+      showDashboard();
+      return;
+    }
+
+    const submitBtn = loginForm.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+    try {
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pw, action: 'verify' }),
+      });
+      if (res.status === 401) {
+        loginError.textContent = 'Incorrect password.';
+        loginError.hidden = false;
+        return;
+      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setPassword(pw);
+      showDashboard();
+    } catch (err) {
+      loginError.textContent = 'Could not verify password — check your connection and try again.';
+      loginError.hidden = false;
+      console.error('[admin] login verify failed:', err);
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 
   logoutBtn.addEventListener('click', () => {
